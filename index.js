@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const util = require("util");
+require("dotenv").config();
 
 let connection = mysql.createConnection({
   host: "localhost",
@@ -17,7 +18,7 @@ connection.connect(function (err) {
   init();
 });
 
-console.log("\n------------ EMPLOYEE TRACKER ------------\n");
+console.table("\n------------ EMPLOYEE TRACKER ------------\n");
 
 const init = async () => {
   try {
@@ -85,11 +86,11 @@ const employeeView = async () => {
       let employeeArray = [];
       res.forEach((employee) => employeeArray.push(employee));
       console.table(employeeArray);
-      initialAction();
+      init();
     });
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 
@@ -102,11 +103,11 @@ const departmentView = async () => {
       let departmentArray = [];
       res.forEach((department) => departmentArray.push(department));
       console.table(departmentArray);
-      initialAction();
+      init();
     });
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 const roleView = async () => {
@@ -118,11 +119,11 @@ const roleView = async () => {
       let roleArray = [];
       res.forEach((role) => roleArray.push(role));
       console.table(roleArray);
-      initialAction();
+      init();
     });
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 
@@ -178,10 +179,10 @@ const employeeAdd = async () => {
     });
 
     console.log(`${answer.firstName} ${answer.lastName} added successfully.\n`);
-    initialAction();
+    init();
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 
@@ -203,10 +204,10 @@ const departmentAdd = async () => {
     });
 
     console.log(`${answer.deptName} added successfully to departments.\n`);
-    initialAction();
+    init();
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 
@@ -254,10 +255,10 @@ const roleAdd = async () => {
     });
 
     console.log(`${answer.title} role added successfully.\n`);
-    initialAction();
+    init();
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 
@@ -304,9 +305,9 @@ const employeeUpdate = async () => {
     ]);
 
     console.log(`The role was successfully updated.\n`);
-    initialAction();
+    init();
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
