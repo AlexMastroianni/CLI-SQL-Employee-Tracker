@@ -18,7 +18,7 @@ connection.connect(function (err) {
   init();
 });
 
-console.table("\n------------ EMPLOYEE TRACKER ------------\n");
+console.log("\n-----------| EMPLOYEE TRACKER |------------\n");
 
 const init = async () => {
   try {
@@ -242,7 +242,6 @@ const roleAdd = async () => {
       },
     ]);
 
-    let chosenDepartment;
     for (i = 0; i < departments.length; i++) {
       if (departments[i].department_id === answer.choice) {
         chosenDepartment = departments[i];
