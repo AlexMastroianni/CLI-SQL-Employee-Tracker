@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const util = require("util");
 const cTable = require("console.table");
 
-let connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
