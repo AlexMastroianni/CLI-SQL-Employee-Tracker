@@ -18,7 +18,7 @@ connection.connect(function (err) {
   init();
 });
 
-console.log("\n-----------| EMPLOYEE TRACKER |------------\n");
+console.table("\n-----------| EMPLOYEE TRACKER |------------\n");
 
 const init = async () => {
   try {
@@ -149,24 +149,12 @@ const employeeAdd = async () => {
       },
       {
         name: "employeeRoleId",
-        type: "list",
-        choices: roles.map((role) => {
-          return {
-            name: role.title,
-            value: role.id,
-          };
-        }),
+        type: "input",
         message: "What is this Employee's role id?",
       },
       {
         name: "employeeManagerId",
-        type: "list",
-        choices: managers.map((manager) => {
-          return {
-            name: manager.first_name + " " + manager.last_name,
-            value: manager.id,
-          };
-        }),
+        type: "input",
         message: "What is this Employee's Manager's Id?",
       },
     ]);
