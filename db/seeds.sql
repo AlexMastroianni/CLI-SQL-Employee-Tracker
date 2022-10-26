@@ -1,14 +1,14 @@
 USE employeesDB;
 
-INSERT INTO department (name)
+INSERT INTO departments (department_name)
 VALUES ("Sales");
-INSERT INTO department (name)
+INSERT INTO departments (department_name)
 VALUES ("Engineering");
-INSERT INTO department (name)
+INSERT INTO departments (department_name)
 VALUES ("Finance");
-INSERT INTO department (name)
+INSERT INTO departments (department_name)
 VALUES ("Legal");
-INSERT INTO department (name)
+INSERT INTO departments (department_name)
 VALUES ("Marketing");
 
 INSERT INTO role (title, salary, department_id)

@@ -72,7 +72,7 @@ const init = async () => {
     }
   } catch (err) {
     console.log(err);
-    initialAction();
+    init();
   }
 };
 
