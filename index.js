@@ -187,7 +187,7 @@ const departmentAdd = async () => {
       },
     ]);
 
-    let result = await connection.query("INSERT INTO department SET ?", {
+    let result = await connection.query("INSERT INTO departments SET ?", {
       department_name: answer.deptName,
     });
 
