@@ -204,7 +204,7 @@ const roleAdd = async () => {
   try {
     console.log("Role Add");
 
-    let departments = await connection.query("SELECT * FROM department");
+    let departments = await connection.query("SELECT * FROM departments");
 
     let answer = await inquirer.prompt([
       {
