@@ -97,7 +97,7 @@ const employeeView = async () => {
 const departmentView = async () => {
   console.log("Department View");
   try {
-    let query = "SELECT * FROM department";
+    let query = "SELECT * FROM departments";
     connection.query(query, function (err, res) {
       if (err) throw err;
       let departmentArray = [];
