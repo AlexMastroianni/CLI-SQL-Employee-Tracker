@@ -162,7 +162,7 @@ const roleAdd = async () => {
         message: "What department ID is this role associated with?",
       },
     ]);
-
+    // try figure out for each!!!!!!
     for (i = 0; i < departments.length; i++) {
       if (departments[i].department_id === answer.choice) {
         chosenDepartment = departments[i];
@@ -185,10 +185,6 @@ const roleAdd = async () => {
 const employeeAdd = async () => {
   try {
     console.log("Employee Add");
-
-    let roles = await connection.query("SELECT * FROM role");
-
-    let managers = await connection.query("SELECT * FROM employee");
 
     let answer = await inquirer.prompt([
       {
